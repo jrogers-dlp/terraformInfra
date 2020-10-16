@@ -37,6 +37,18 @@ data "aws_ami" "amazon_windows_2012R2" {
   }
 }
 */
+variable "db_password"{
+  type = string
+}
+variable "octo_master_key"{
+  type = string
+}
+variable "octo_password"{
+  type = string
+}
+variable "user_password"{
+  type = string
+}
 data "aws_db_instance" "octo_db" {
   db_instance_identifier = "octopusdeploy"
 }
@@ -62,13 +74,9 @@ resource "aws_instance" "octo" {
 
   key_name = "jrogers-kp"
   get_password_data = true
-  #subnet_id = "subnet-5dca5135"
   vpc_security_group_ids = ["sg-0e47e07daae5a3c59"]
   associate_public_ip_address = true
   #Start-BitsTransfer -Source https://download.octopusdeploy.com/octopus/Octopus.2020.4.6-x64.msi -Destination C:\temp\Octopus.msi
-  # Set Administrator password
-  #$admin = [adsi]("WinNT://./administrator, user")
-  #$admin.psbase.invoke("SetPassword", "PASSWORD")
   user_data = <<EOF
 <powershell>
   net user 'j.rogers' ${var.user_password} /add /y
@@ -169,14 +177,7 @@ resource "aws_instance" "octo" {
 <persist>true</persist>
 EOF
 }
-/*
-output "admin_pass" {
-  value = rsadecrypt(aws_instance.octo.password_data, file("C:/Users/j.rogers/Downloads/jrogers-kp.pem"))
-}
-output "db_endpoint" {
-  value = local.db_endpoint
-}
-*/
+
 output "public_ip" {
   value = aws_instance.octo.public_ip
 }
