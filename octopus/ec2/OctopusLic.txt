@@ -1,0 +1,14 @@
+<License Signature="c9pgF9wmU8IpodHPjqS3+Qxa+l/dXAVyu96BY8za7bh+pKUQvA8ls7lrjSzetULZ7VvaZR6qOK4v1G1As0H1Qg==">
+  <LicensedTo>Double Line</LicensedTo>
+  <LicenseKey>01231-82856-07423-52632</LicenseKey>
+  <Version>2.0<!-- License Schema Version --></Version>
+  <ValidFrom>2020-10-08</ValidFrom>
+  <Kind>Subscription</Kind>
+  <ValidTo>2021-10-08</ValidTo>
+  <ProjectLimit>Unlimited</ProjectLimit>
+  <MachineLimit>10</MachineLimit>
+  <UserLimit>Unlimited</UserLimit>
+  <NodeLimit>Unlimited</NodeLimit>
+  <SpaceLimit>Unlimited</SpaceLimit>
+  <TaskCap>5</TaskCap>
+</License>

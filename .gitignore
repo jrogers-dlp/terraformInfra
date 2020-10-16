@@ -1,0 +1,3 @@
+*\sensitive.auto.tfvars
+*.terraform*
+*tfstate*
